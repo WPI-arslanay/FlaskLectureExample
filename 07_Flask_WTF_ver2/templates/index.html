@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Flask Example</title>
+  </head>
+  <body>
+    <h1> Hello!</h1>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>{{ form.name.label}} 
+         {{ form.name()}}
+      </p>
+    <p>{{ form.submit()}}</p>
+    </form>
+
+  </body>
+</html>

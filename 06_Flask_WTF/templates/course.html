@@ -1,0 +1,14 @@
+<h1>Hello, {{name}} class!</h1>
+Course title: 
+{% if name=='CS3733' %}
+    Software Engineering
+{% else %}
+    {% if name=='CS3431' %}
+        Database Systems
+    {%else %}
+        Unknown
+    {%endif%}    
+{%endif%}
+
+<p>Click <a href=" {{url_for('index')}}"> here </a> to return back to main page!</p> 
+

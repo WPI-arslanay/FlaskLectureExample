@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Flask Example</title>
+  </head>
+  <body>
+  
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+           <div style = "background-color: lightblue; margin: 10px 0px 10px 0px; padding: 25px;">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+ 
+    <h1> Hello!</h1>
+    <h2>Current Courses:</h2>
+    <ul>
+      {% for course in courses %}
+        <li> <a href="{{url_for('course', name= '{}{}-{}'.format(course.major,course.coursenum,course.title)) }}" > {{ course.major}}{{course.coursenum}}-{{course.title}}  </a> </li>
+      {% endfor %}
+    </ul>
+    <h2>Add New Course:</h2>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>{{ form.major.label}} 
+         {{ form.major()}}
+      </p>
+      <p>{{ form.coursenum.label}} 
+        {{ form.coursenum()}}
+     </p>
+     <p>{{ form.title.label}} 
+      {{ form.title()}}
+   </p>
+    <p>{{ form.submit()}}</p>
+    </form>
+
+  </body>
+</html>

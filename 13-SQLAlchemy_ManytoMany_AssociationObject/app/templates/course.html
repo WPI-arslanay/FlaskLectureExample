@@ -1,0 +1,25 @@
+<h1>Hello, "{{current_course.major}} {{current_course.coursenum}} - {{current_course.title}} " class!</h1>
+
+<h2>TAs:</h2>
+    <ol>
+      {% for ta_assignment in current_course.all_tas() %}
+        <li>
+            {% set the_ta = ta_assignment.ta_assigned %}
+            {{the_ta.ta_name}}
+        </li>
+      {% endfor %}
+    </ol>
+
+<h2>Add New TA:</h2>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <p>{{ form.ta_name.label}} 
+         {{ form.ta_name()}}
+      </p>
+    <p>{{ form.submit()}}</p>
+    </form>
+
+
+
+<p>Click <a href=" {{url_for('index')}}"> here </a> to return back to main page!</p> 
+

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Flask Example</title>
+  </head>
+  <body>
+    <h1> Hello!</h1>
+    <form method="POST" >
+      Please choose your class: <input type="text" name="name">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+    {% if name %}
+      <h2>Your course is <a href="{{ url_for('course',name=name)}}">  {{name}} </a> !</h2>
+    {% endif %}
+  </body>
+</html>
