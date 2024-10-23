@@ -10,8 +10,19 @@
       **Important** (Mac/Linux users): 
       Mac and Linux systems have Python 2.x installed already. When you type and run `python` on the terminal, it will run the Python2 interpreter. To launch Python 3, run `python3` and to run the `python3` installer run `pip3`.
 
-2. Open a terminal or command line window. 
-   Run the following commands to install `flask` and `flask-sqlalchemy`. 
+2. Open a terminal or command line window and clone the repository: 
+      ```
+      git clone https://github.com/WPI-arslanay/FlaskLectureExample.git
+      ```
+      Go into the `FlaskLectureExample` folder and create a Python virtual environment:
+      ```python -m venv venv```
+
+      Activate the virtual environment.
+      ```
+      Windows : venv\Scripts\activate.bat
+      Mac : source ./env/bin/activate
+      ```
+3. Run the following commands on command line to install `flask` and `flask-sqlalchemy`. 
 
     on `Windows`:
     ```
